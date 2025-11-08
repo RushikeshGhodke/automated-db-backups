@@ -1,9 +1,11 @@
 name: database-backup-cron-job
 
 on:
-  push:
-    branches: 
-      - main
+  workflow_dispatch:
+    
+  # push:
+  #   branches: 
+  #     - main
 
 jobs: 
   hello: 
@@ -13,3 +15,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Print Hello
         run: echo "Hello"
+
+
+# steps: 
+#   1. Connect to machine
+#   2. check for DB / mongodb is running
+#   3. backup DB
+#   4. create TARball
+#   5. upload to s3 via aws cli
+
+
+# another script:
+#   1. restore latest backup
